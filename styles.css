@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2400f3;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 90%;
+    padding: 1%;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#search {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#genre-filter {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #001aff; 
+    background-color: white;
+}
+
+#genre-filter option {
+    color: #001aff;
+}
+
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.anime-item {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.anime-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.anime-genres {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    display: none;
+}
+
+.anime-item:hover .anime-genres {
+    display: block;
+}
+
+.favorite {
+    display: block;
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.favorite:hover {
+    color: #ff6666;
+}
+
+.anime-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.load-more, .show-favorites {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.load-more:hover, .show-favorites:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .anime-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .anime-item {
+        padding: 10px;
+    }
+
+    .favorite {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-list {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-item {
+        padding: 8px;
+    }
+
+    .favorite {
+        font-size: 18px;
+    }
+}
